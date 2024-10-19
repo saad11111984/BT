@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Budget Tracker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f4f4f4;
+        }
+        h1 {
+            text-align: center;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ccc;
+            text-align: center;
+        }
+        input {
+            width: 100%;
+            padding: 5px;
+        }
+        .totals {
+            font-weight: bold;
+        }
+        .diff-negative {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Personal Budget and Expense Tracker</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Category</th>
+                <th>Budgeted Amount</th>
+                <th>Actual Amount</th>
+                <th>Difference</th>
+                <th>Notes</th>
+            </tr>
+        </thead>
+        <tbody id="budgetTable">
+            <tr>
+                <td>Salary (Bi-weekly)</td>
+                <td><input type="number" id="budgetSalary" value="1790"></td>
+                <td><input type="number" id="actualSalary"></td>
+                <td id="diffSalary"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Freelance/Other</td>
+                <td><input type="number" id="budgetFreelance"></td>
+                <td><input type="number" id="actualFreelance"></td>
+                <td id="diffFreelance"></td>
+                <td></td>
+            </tr>
+            <tr class="totals">
+                <td>Total Income</td>
+                <td id="totalBudgetIncome"></td>
+                <td id="totalActualIncome"></td>
+                <td id="totalDiffIncome"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Rent/Mortgage</td>
+                <td><input type="number" id="budgetRent"></td>
+                <td><input type="number" id="actualRent"></td>
+                <td id="diffRent"></td>
+                <td></td>
+            </tr>
+            <!-- Add more expenses as needed -->
+            <tr class="totals">
+                <td>Total Expenses</td>
+                <td id="totalBudgetExpenses"></td>
+                <td id="totalActualExpenses"></td>
+                <td id="totalDiffExpenses"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Credit Card (Limit: $1000)</td>
+                <td>1000</td>
+                <td><input type="number" id="creditCardBalance"></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr class="totals">
+                <td>Difference (Income - Expenses)</td>
+                <td id="finalDifference"></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+    </table>
+    <button onclick="calculate()">Calculate</button>
+
+    <script src="script.js"></script>
+</body>
+</html>
